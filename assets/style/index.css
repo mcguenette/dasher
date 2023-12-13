@@ -189,7 +189,15 @@ h1 span {
 .marker {
     color: #860D0D;
     cursor: pointer;
-  }
+}
+
+.mapboxgl-ctrl-bottom-left {
+    display: none;
+}
+
+.mapboxgl-ctrl-bottom-right {
+    display: none;
+}
 
 /* footer */
 .footer-container {

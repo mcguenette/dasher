@@ -7,7 +7,8 @@ const map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/mcguenette/clq419vsu004101ql1zxm8bj3', // style URL
     center: [-97.1418535214156, 49.89382907977702],  // starting position [lng, lat]
-    zoom: 9 // starting zoom,
+    zoom: 9, // starting zoom,
+    pitch: 40
 });
 
 map.on('load', () => {
@@ -21,6 +22,45 @@ map.on('load', () => {
         'source-layer': 'contour'
     });
 });
+
+
+function getLocation(position) {
+    let { latitude, longitude } = position.coords;
+    const userLocation = [latitude, longitude];
+    map.flyTo({center: userLocation, zoom: 14});
+
+    addMarker(userLocation);
+}
+
+function errorHandler() {
+    alert('unable to retireve your location');
+}
+
+const options = {
+    enableHighAccuracy: true
+};
+
+if ('geolocation' in navigator) {
+    navigator.geolocation.getCurrentPosition(getLocation, errorHandler, options);
+} else {
+    alert('borwser does not support geolocation');
+}
+
+const geojson = {
+    type: 'FeatureCollection',
+    features: [
+        {
+            type: 'Feature',
+            geometry: {
+                type: 'point',
+                coordinates: [userLocation]
+            },
+            properties: {
+                title: 'My Location'
+            }
+        },
+    ]
+};
 
 // add markers to map
 for (const feature of geojson.features) {

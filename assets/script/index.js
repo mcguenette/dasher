@@ -5,7 +5,7 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibWNndWVuZXR0ZSIsImEiOiJjbHExOWUxeWcwNmwyMmlvMGY3NXF3bGc4In0.SXaq4QutArp0bqPMpmnkjg';
 const map = new mapboxgl.Map({
     container: 'map', // container ID
-    style: 'mapbox://styles/mcguenette/clq419vsu004101ql1zxm8bj3', // style URL
+    style: 'mapbox://styles/mcguenette/clq46ofev004c01pdacot3c5t', // style URL
     center: [-97.1418535214156, 49.89382907977702],  // starting position [lng, lat]
     zoom: 9, // starting zoom,
     pitch: 40

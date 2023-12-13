@@ -2,15 +2,15 @@
 @import url(./reset.css);
 
 :root {
-    /* --primary-dark: #202124;
+    --primary-dark: #202124;
     --secondary-dark-color: #ffffff0d;
     --light-color: #fafafa;
     --primary-blue: #09f;
     --secondary-blue: rgb(0, 119, 198);
     --primary-green: #9f0;
-    --primary-red: rgb(255, 0, 93);
+    --primary-red: #860D0D;
     --primary-orange: #f90;
-    --primary-purple: #90f; */
+    --primary-purple: #90f;
 }
 
 body {
@@ -23,7 +23,7 @@ main {
 }
 
 .container {
-    width: min(100% - 30px, 1080px);
+    width: min(100% - 60px, 1080px);
     margin-inline: auto;
     min-height: 100dvh;
 }
@@ -38,6 +38,11 @@ header {
     height: 80px;
 }
 
+.header-container, .footer-container {
+    width: min(100% - 60px, 1080px);
+    margin-inline: auto;
+}
+
 section.header-container {
     line-height: 80px;
 }
@@ -46,16 +51,16 @@ li + li {
     margin-left: 25px;
 }
 
-.left-header, .right-header {
+.left-header, .right-header, .footer-left, .footer-mid, .footer-right {
     display: flex;
     align-items: center;
 }
 
-.left-header {
+.left-header, .footer-left {
     justify-content: flex-start;
 }
 
-.right-header {
+.right-header, .footer-right {
     justify-content: flex-end;
 }
 
@@ -66,8 +71,45 @@ li {
 
 /* buttons */
 
-input[type="button"] {
+input[type="button"], .button {
     height: 42px;
     padding: 7px 20px;
     line-height: normal;
+}
+
+
+/* footer */
+.footer-container {
+    display: flex;
+    align-items: center;
+    /* line-height: 100px; */
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    height: 200px;
+    background-color: var(--primary-red);
+    color: var(--light-color);
+}
+
+.footer-left, .footer-mid, .footer-right {
+    width: 33.33%;
+}
+
+.footer-right, .footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-right p {
+    margin-bottom: 10px;
+}
+
+input#email {
+    border: 1px solid var(--primary-dark);
+    height: 42px;
+    margin-right: 10px;
+    padding: 5px 15px;
 }

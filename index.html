@@ -12,22 +12,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo:wght@500;600&family=Poppins:wght@400;800&display=swap" rel="stylesheet">
-    <script src="./assets/script/index.js" type="module"></script>
-    <link rel="stylesheet" href="./assets/style/index.css">
     <script src="https://kit.fontawesome.com/20608a4ccb.js" crossorigin="anonymous"></script>
-    <title></title>
+    <script src="./assets/script/index.js" defer></script>
+    <link rel="stylesheet" href="./assets/style/index.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css' rel='stylesheet' />
+    <title>Dasher</title>
 </head>
 <body>
     <header>
-        <section>
-            <div class="left-header"><div class="main-logo"></div></div>
-            <div class="right-header">
-                <ul>
-                <li>About us</li>
-                <li>Contact us</li>
-                <li><input type="button" value="Track" id="track" class="primary-button"></li>
-            </ul>
-        </div>
+        <section class="header-container">
+                <div class="left-header"><div class="main-logo"></div></div>
+                <div class="right-header">
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><input type="button" value="Track" id="track" class="primary-button"></li>
+                    </ul>
+                </div>
         </section>
     </header>
     <main>
@@ -69,8 +71,53 @@
                 <img src="./assets/Dasher/20.png">
             </section>
             <!-- add section (Become an elf) - MC + div here -->
+            <section>
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
+            </section>
+            <section>
+                <div class="elf">
+                    <h2>Become an E.L.F</h2>
+                    <p>
+                        Come be a part of our journey, where every ELF is cherished for their dedication, 
+                        passion, and commitment to making the world a merrier place
+                    </p>
+                    <input type="button" value="See openings" class="button primary-button">
+                </div>
+            </section>
             <!-- add section (map tracking)+ div here -->
         </div>
     </main>
+    <footer>
+        <section class="footer-container">
+            <div class="footer-left">
+                <div>
+                    <p>Footer Logo</p>
+                    <img src="" alt="">
+                </div>
+                <div>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <!-- social icons -->
+                </div>
+            </div>
+            <div class="footer-mid">
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Track</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <p>Get the latest updates</p>
+                <form action="">
+                    <input type="email" name="email" id="email">
+                    <input type="submit" value="Submit" class="button secondary-button">
+                </form>
+            </div>
+        </section>
+    </footer>
 </body>
 </html>

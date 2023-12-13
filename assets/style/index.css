@@ -78,6 +78,27 @@ input[type="button"], .button {
 }
 
 
+/* Elf section */
+.elf {
+    text-align: center;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-red);
+    color: var(--light-color);
+}
+
+.elf h2 {
+    margin-bottom: 25px;
+}
+
+.elf p {
+    width: 75%;
+    margin-bottom: 25px;
+}
+
 /* footer */
 .footer-container {
     display: flex;
@@ -113,3 +134,5 @@ input#email {
     margin-right: 10px;
     padding: 5px 15px;
 }
+
+

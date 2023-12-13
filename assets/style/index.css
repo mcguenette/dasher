@@ -6,8 +6,17 @@
     --secondary-dark-color: #ffffff0d;
     --light-color: #fafafa;
     --primary-red: #860D0D;
-    --primary-gold: #E8BE40;
-    --primary-pink: #e99b9d;
+    /* --primary-gold: #E8BE40; */
+    --primary-gold: #a87618;
+    --primary-pink: #c58183;
+}
+
+@font-face {
+    font-family: 'hyperwave_tworegular';
+    src: url('../fonts/hyperwave-two.ttf') format('woff2'),
+         url('../fonts/hyperwave-two.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
@@ -39,9 +48,21 @@ section + section {
     margin-top: 100px;
 }
 
+h1, h2 {
+    font-family: 'DM Serif Display', serif;
+}
+
+h1 {
+    font-size: 50px;
+}
+
 /* Header */
 header {
     height: 80px;
+}
+
+.main-logo img {
+    width: 150px;
 }
 
 .header-wrapper, .footer-wrapper {
@@ -66,7 +87,7 @@ li + li {
 }
 
 header a:hover {
-    color: gold;
+    color: var(--primary-gold);
 }
 
 .left-header, .right-header, .footer-left, .footer-mid, .footer-right {
@@ -90,7 +111,7 @@ li {
 
 input[type="button"], .button {
     height: 42px;
-    padding: 7px 20px;
+    padding: 7px 25px;
     line-height: normal;
     border-radius: 50px;
 }
@@ -98,11 +119,25 @@ input[type="button"], .button {
 .primary-button {
     color: #fff;
     background-color: #860D0D;
+    transition: 0.3s ease-in-out;
 }
 
 .secondary-button {
     color: #860D0D;
     border: 1px solid #860D0D;
+    transition: all 200ms;
+}
+
+.primary-button:hover {
+    background: var(--primary-gold);
+    color: var(--light-color);
+}
+
+.secondary-button:hover {
+    border-color: rgb(0 0 0 / 89%);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgb(0 0 0 / 89%);
+    transform: translateY(-1px);
 }
 
 /* Hero */
@@ -117,13 +152,17 @@ input[type="button"], .button {
     margin-top: 30px;
 }
 
-h1 {
-    font-size: 45px;
-    margin-bottom: 30px;
+.hero-btn {
+    display: flex;
+    gap: 15px;
 }
 
 h1 span {
-    color: #860D0D;
+    color: var(--primary-red);
+    font-family: 'hyperwave_tworegular', sans-serif;
+    font-size: 84px;
+    margin-left: 20px;
+    vertical-align: middle;
 }
 
 .hero div h2 {
@@ -145,26 +184,47 @@ h1 span {
 
 /* About Us */
 .about {
+    position: relative;
     display: flex;
     width: 100%;
     background-color: #860D0D;
+    background: url(../img/20.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 3;
+}
+
+.about::before {
+    content: "";
+    position: absolute;
+    background-color: #860D0D;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    z-index: 1;
 }
 
 .about-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 80px 0px;
-    gap: 60px;
 }
 
 .about-text {
     color: #fff;
-    width: 50%;
     display: flex;
     flex-direction: column;
-    align-content: center;
     justify-content: center;
+    z-index: 3;
+    width: 85%;
+    align-items: flex-start;
+}
+
+.about-text h2, .elf h2 {
+    font-size: 42px;
 }
 
 .about-img {
@@ -179,12 +239,13 @@ h1 span {
 .elf {
     text-align: center;
     width: 100%;
-    height: 300px;
+    height: 400px;
     background: url(../img/elf-background.jpg);
     background-position: center;
     background-size: cover;
     color: var(--primary-dark);
     justify-content: center;
+    margin-bottom: 150px;
 }
 
 .elf-wrapper {
@@ -273,5 +334,5 @@ footer a {
 }
 
 footer a:hover {
-    color: gold;
+    color: var(--primary-gold);
 }

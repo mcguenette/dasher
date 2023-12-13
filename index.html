@@ -12,22 +12,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo:wght@500;600&family=Poppins:wght@400;800&display=swap" rel="stylesheet">
-    <script src="./assets/script/index.js" type="module"></script>
-    <link rel="stylesheet" href="./assets/style/style.css">
     <script src="https://kit.fontawesome.com/20608a4ccb.js" crossorigin="anonymous"></script>
+    <script src="./assets/script/index.js" defer></script>
+    <link rel="stylesheet" href="./assets/style/index.css">
     <title></title>
 </head>
 <body>
     <header>
-        <section>
-            <div class="left-header"><div class="main-logo"></div></div>
-            <div class="right-header">
-                <ul>
-                <li>About us</li>
-                <li>Contact us</li>
-                <li><input type="button" value="Track" id="track" class="primary-button"></li>
-            </ul>
-        </div>
+        <section class="header-container container">
+                <div class="left-header"><div class="main-logo"></div></div>
+                <div class="right-header">
+                    <ul>
+                        <li>About us</li>
+                        <li>Contact us</li>
+                        <li><input type="button" value="Track" id="track" class="primary-button"></li>
+                    </ul>
+                </div>
         </section>
     </header>
     <main>
@@ -48,6 +48,34 @@
             <!-- add section (Become an elf) - MC + div here -->
             <!-- add section (map tracking)+ div here -->
         </div>
+        <footer>
+            <section>
+                <div class="footer-left">
+                    <div>
+                        <img src="" alt="">
+                    </div>
+                    <div>
+                        <!-- social icons -->
+                    </div>
+                </div>
+                <div class="footer-mid">
+                    <ul>
+                        <li>About us</li>
+                        <li>Contact us</li>
+                        <li>Track</li>
+                    </ul>
+                </div>
+                <div class="footer-right">
+                    <p>Get the latest updates</p>
+                    <form action="">
+                        <input type="email" name="email" id="email">
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </section>
+        </footer>
+
+        
     </main>
 </body>
 </html>

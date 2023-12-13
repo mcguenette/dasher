@@ -30,3 +30,44 @@ main {
 
 section {
 }
+
+
+/* Header */
+
+header {
+    height: 80px;
+}
+
+section.header-container {
+    line-height: 80px;
+}
+
+li + li {
+    margin-left: 25px;
+}
+
+.left-header, .right-header {
+    display: flex;
+    align-items: center;
+}
+
+.left-header {
+    justify-content: flex-start;
+}
+
+.right-header {
+    justify-content: flex-end;
+}
+
+li {
+    display: inline;
+}
+
+
+/* buttons */
+
+input[type="button"] {
+    height: 42px;
+    padding: 7px 20px;
+    line-height: normal;
+}

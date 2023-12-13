@@ -21,8 +21,11 @@ body {
     min-height: 100dvh;
 }
 
-/* Header */
+section {
+    margin-top: 100px;
+}
 
+/* Header */
 header {
     height: 80px;
 }
@@ -67,84 +70,23 @@ li {
     display: inline;
 }
 
-
 /* buttons */
 
 input[type="button"], .button {
     height: 42px;
     padding: 7px 20px;
     line-height: normal;
-}
-
-
-/* Elf section */
-.elf {
-    text-align: center;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--primary-red);
-    color: var(--light-color);
-}
-
-.elf h2 {
-    margin-bottom: 25px;
-}
-
-.elf p {
-    width: 75%;
-    margin-bottom: 25px;
-}
-
-/* Map */
-
-#map {
-    width: 100%; 
-    height: 300px;
-}
-
-.map-container, .header-container, .footer-container {
-    padding: 20px 0px;
-}
-
-.marker {
-    color: #860D0D;
-    cursor: pointer;
-  }
-
-/* footer */
-.footer-container {
-    display: flex;
-    align-items: center;
-    /* line-height: 100px; */
-}
-
-footer {
-    display: flex;
-    align-items: center;
-    height: 200px;
-    background-color: var(--primary-red);
-    color: var(--light-color);
-}
-
-section {
-    margin-top: 100px;
+    border-radius: 50px;
 }
 
 .primary-button {
     color: #fff;
     background-color: #860D0D;
-    border-radius: 50px;
-    padding: 11px 30px;
 }
 
 .secondary-button {
     color: #860D0D;
     border: 1px solid #860D0D;
-    border-radius: 50px;
-    padding: 10px 20px;
 }
 
 /* Hero */
@@ -213,63 +155,6 @@ h1 span {
     width: 40%;
 }
 
-
-/* Header */
-
-header {
-    height: 80px;
-}
-
-.header-container, .footer-container {
-    width: min(100% - 60px, 1080px);
-    margin-inline: auto;
-}
-
-section.header-container {
-    line-height: 80px;
-}
-
-li + li {
-    margin-left: 25px;
-}
-
-.right-header a {
-    text-decoration: none;
-    color: inherit;
-    transition: 0.3s ease-in;
-}
-
-header a:hover {
-    color: gold;
-}
-
-.left-header, .right-header, .footer-left, .footer-mid, .footer-right {
-    display: flex;
-    align-items: center;
-}
-
-.left-header, .footer-left {
-    justify-content: flex-start;
-}
-
-.right-header, .footer-right {
-    justify-content: flex-end;
-}
-
-li {
-    display: inline;
-}
-
-
-/* buttons */
-
-input[type="button"], .button {
-    height: 42px;
-    padding: 7px 20px;
-    line-height: normal;
-}
-
-
 /* Elf section */
 .elf {
     text-align: center;
@@ -278,8 +163,8 @@ input[type="button"], .button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--primary-red);
-    color: var(--light-color);
+    background-color: var(--primary-gold);
+    color: var(--primary-dark);
 }
 
 .elf h2 {
@@ -292,7 +177,6 @@ input[type="button"], .button {
 }
 
 /* Map */
-
 #map {
     width: 100%; 
     height: 300px;

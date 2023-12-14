@@ -9,7 +9,7 @@
     /* --primary-gold: #E8BE40; */
     --primary-gold: #a87618;
     --primary-pink: #c58183;
-    --secondary-pink: #c581832c;
+    --secondary-pink: #c581831c;
 }
 
 @font-face {
@@ -301,6 +301,10 @@ h1 span {
 
 .map-wrapper h2 {
     font-size: 42px;
+}
+
+.map-wrapper span {
+    color: var(--primary-red);
 }
 
 .marker {

@@ -322,9 +322,16 @@ h1 span {
     width: 60px;
 }
 
+.reviews h2 {
+    text-align: left;
+}
+
 .reviews h2, .elf h2 { 
-    text-align: center;
     margin-bottom: 30px;
+}
+
+.elf h2 { 
+    text-align: center;
 }
 
 i.fa-solid.fa-star {

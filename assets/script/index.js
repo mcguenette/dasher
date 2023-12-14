@@ -1,15 +1,16 @@
 'use strict';
 
-// import { onEvent, select, selectAll } from './utils.js';
-
 mapboxgl.accessToken = 'pk.eyJ1IjoibWNndWVuZXR0ZSIsImEiOiJjbHExOWUxeWcwNmwyMmlvMGY3NXF3bGc4In0.SXaq4QutArp0bqPMpmnkjg';
+
 const map = new mapboxgl.Map({
     container: 'map', // container ID
-    style: 'mapbox://styles/mcguenette/clq419vsu004101ql1zxm8bj3', // style URL
+    style: 'mapbox://styles/mcguenette/clq46ofev004c01pdacot3c5t', // style URL
     center: [-97.1418535214156, 49.89382907977702],  // starting position [lng, lat]
     zoom: 9, // starting zoom,
     pitch: 40
 });
+
+let userLocation;
 
 map.on('load', () => {
     map.addLayer({
@@ -23,17 +24,26 @@ map.on('load', () => {
     });
 });
 
+function addMarker(coordinates) {
+    const el = document.createElement('div');
+    el.className = 'marker';
+
+    // Make a marker for the feature and add it to the map
+    new mapboxgl.Marker(el)
+        .setLngLat(coordinates)
+        .addTo(map);
+}
 
 function getLocation(position) {
     let { latitude, longitude } = position.coords;
-    const userLocation = [latitude, longitude];
-    map.flyTo({center: userLocation, zoom: 14});
+    userLocation = [longitude, latitude];
+    map.flyTo({ center: userLocation, zoom: 14 });
 
     addMarker(userLocation);
 }
 
 function errorHandler() {
-    alert('unable to retireve your location');
+    alert('Unable to retrieve your location');
 }
 
 const options = {
@@ -43,7 +53,7 @@ const options = {
 if ('geolocation' in navigator) {
     navigator.geolocation.getCurrentPosition(getLocation, errorHandler, options);
 } else {
-    alert('borwser does not support geolocation');
+    alert('Browser does not support geolocation');
 }
 
 const geojson = {
@@ -52,8 +62,8 @@ const geojson = {
         {
             type: 'Feature',
             geometry: {
-                type: 'point',
-                coordinates: [userLocation]
+                type: 'Point',
+                coordinates: userLocation ? [userLocation[0], userLocation[1]] : [0, 0]
             },
             properties: {
                 title: 'My Location'
@@ -62,24 +72,22 @@ const geojson = {
     ]
 };
 
-// add markers to map
+// Add markers to map
 for (const feature of geojson.features) {
-    // create a HTML element for each feature
+    // create an HTML element for each feature
     const el = document.createElement('div');
     el.className = 'marker';
-  
-    // make a marker for each feature and add to the map
-    new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map);
-  }
 
-  map.addControl(
+    // make a marker for each feature and add it to the map
+    new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map);
+}
+
+map.addControl(
     new mapboxgl.GeolocateControl({
-    positionOptions: {
-    enableHighAccuracy: true
-    },
-    // When active the map will receive updates to the device's location as it changes.
-    trackUserLocation: true,
-    // Draw an arrow next to the location dot to indicate which direction the device is heading.
-    showUserHeading: true
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        trackUserLocation: true,
+        showUserHeading: true
     })
-    );
+);

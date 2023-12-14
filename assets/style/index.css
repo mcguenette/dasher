@@ -54,7 +54,7 @@ section.header-wrapper, section.footer-wrapper, section.hero-banner {
     margin-top: 0;
 }
 
-h1, h2 {
+h1, h2, h3 {
     font-family: 'DM Serif Display', serif;
 }
 
@@ -234,7 +234,7 @@ h1 span {
     align-items: flex-start;
 }
 
-.about-text h2, .elf h2 {
+.about-text h2, .map-wrapper h2 , .elf h2, .reviews h2 {
     font-size: 42px;
 }
 
@@ -257,19 +257,7 @@ h1 span {
     background-size: cover;
     color: var(--primary-dark);
     justify-content: center;
-    margin-bottom: 120px;
 }
-
-/* .elf::before {
-    content: "";
-    position: absolute;
-    background-color: #01010124;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-} */
 
 .elf-wrapper {
     width: 47%;
@@ -299,10 +287,6 @@ h1 span {
     gap: 30px;
 }
 
-.map-wrapper h2 {
-    font-size: 42px;
-}
-
 .map-wrapper span {
     color: var(--primary-red);
 }
@@ -325,6 +309,47 @@ h1 span {
     display: none;
 }
 
+/* reviews */
+.reviews-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.reviews-wrapper img {
+    border-radius: 3px;
+    width: 60px;
+}
+
+.reviews h2, .elf h2 { 
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+i.fa-solid.fa-star {
+    color: var(--primary-gold);
+}
+
+.card {
+    padding: 30px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 33.33%;
+    height: 500px;
+    background-color: #fff;
+    gap: 5px;
+    justify-content: flex-start;
+}
+
+.card p {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+
 /* footer */
 .footer-wrapper {
     display: flex;
@@ -339,7 +364,7 @@ footer {
     height: 250px;
     background-color: var(--primary-red);
     color: var(--light-color);
-    margin-top: 20px;
+    margin-top: 120px;
 }
 
 .footer-right, .footer-left {

@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Kalnia:wght@300;400;600&family=Poppins:wght@400;800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/20608a4ccb.js" crossorigin="anonymous"></script>
-    <script src="./assets/script/index.js" defer></script>
+    <script src="./assets/script/index.js" type="module"></script>
     <link rel="stylesheet" href="./assets/style/index.css">
     <script src='https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css' rel='stylesheet' />
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <div class="img">
-                        <img src="./assets/img/9.png">
+                        <img src="./assets/img/13.png">
                     </div>
                 </div>
             </section>
@@ -80,8 +80,10 @@
                     </div>
                 </div>
             </section>
-            <section>
+            <section class="map">
                 <div class="map-wrapper">
+                    <h2>Track your package</h2>
+                    <input type="button" value="Track" class="primary-button" id="tracking">
                     <div id="map"></div>
                 </div>
             </section>
